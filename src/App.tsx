@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import { ChildrenProps, Issue, ISSUES_API, LoadingStatus } from './constants/issues.types';
+import { Issue, ISSUES_API, LoadingStatus } from './constants/issues.types';
 import { Header } from './components';
-
-
-
-
-
-
-
 
 
 function App() {
