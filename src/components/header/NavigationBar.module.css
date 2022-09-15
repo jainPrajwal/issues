@@ -1,0 +1,9 @@
+.navItemLink {
+    color: var(--color-fg-default);
+}
+
+.navItem:hover {
+    background-color: var(--color-action-list-item-default-hover-bg);
+    border-radius: 12px;;
+    cursor: pointer;
+}

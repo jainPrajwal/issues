@@ -1,5 +1,5 @@
 export function PageHeadActions() {
-  return <div className="wrapper-page-head-actions d-flex gap-10 ai-center ml-auto">
+  return <div className="wrapper-page-head-actions d-flex gap-10 ai-center ml-auto f-wrap">
     <button className="btn btn-icon d-flex gap-10 ai-center">
       <div className="d-flex gap-10 ai-center">
 
@@ -8,7 +8,9 @@ export function PageHeadActions() {
         </svg>
         <span >Watch</span>
       </div>
-      <span>6.7K</span>
+      <span
+      className="text-small notifications-counter"
+      >6.7K</span>
       <span className="dropdown-caret"></span>
     </button>
     <button className="btn btn-icon d-flex gap-10 ai-center">
@@ -19,7 +21,9 @@ export function PageHeadActions() {
 </svg>
         <span >Fork</span>
       </div>
-      <span>6.7K</span>
+      <span
+        className="text-small notifications-counter"
+      >6.7K</span>
       <span className="dropdown-caret"></span>
     </button>
     <button className="btn btn-icon d-flex gap-10 ai-center">
@@ -30,7 +34,9 @@ export function PageHeadActions() {
         </svg>
         <span >Fork</span>
       </div>
-      <span>6.7K</span>
+      <span
+        className="text-small notifications-counter"
+      >6.7K</span>
       <span className="dropdown-caret"></span>
     </button>
   </div>

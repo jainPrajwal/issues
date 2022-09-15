@@ -507,6 +507,10 @@ a {
     padding-block: 1rem;
 }
 
+.py-lg {
+    padding-block: 2rem;
+}
+
 .px-sm {
     padding-inline: 0.5rem;
 }
@@ -579,7 +583,6 @@ a {
     border-radius: 8px;
     background-color: transparent;
     font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
 }
 
@@ -706,6 +709,15 @@ a {
     border-bottom-color: transparent;
     border-left-color: transparent;
 }
+
+.notifications-counter {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--color-btn-counter-bg);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 
 @media screen and (max-width: 720px) {
     .btn {
