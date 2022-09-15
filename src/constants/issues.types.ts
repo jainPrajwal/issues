@@ -1,3 +1,5 @@
+import React from "react";
+
 export const ISSUES_API = `https://api.github.com/repos/facebook/react/issues`;
 
 type User = {
@@ -75,4 +77,7 @@ type Issue = {
   state_reason: null;
 };
 
-export type { Issue, Label, Reactions, User };
+type LoadingStatus = `idle` | `loading` | `success` | `error`;
+type ChildrenProps = React.ReactNode;
+
+export type { Issue, Label, Reactions, User, LoadingStatus, ChildrenProps };
