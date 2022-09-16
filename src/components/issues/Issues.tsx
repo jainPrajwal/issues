@@ -6,6 +6,7 @@ import { Issue } from "../issue/Issue";
 import { useEffect, useRef, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { ISSUES_API } from "../../constants/issues.types";
+import { Loader } from "../Loader/Loader";
 
 const TOTAL_PAGES = 3;
 const LIMIT = 10;
@@ -28,7 +29,7 @@ function Issues() {
         console.log(`first element `, first);
 
         if (first.isIntersecting) {
-
+            setPageNumber(prevState => prevState + 1)
         }
     }))
 
@@ -52,6 +53,12 @@ function Issues() {
 
                     if (response.status === 200) {
 
+                        issuesDispatch({
+                            type: `SET_ISSUES_LIST`,
+                            payload: {
+                                issues: issuesState.issuesList.concat(response.data.slice(startIndex, endIndex))
+                            }
+                        })
                         issuesDispatch({
                             type: `SET_LOADING_STATUS`,
                             payload: {
@@ -109,29 +116,32 @@ function Issues() {
     return <div className={` px-lg ${containerIssues}`}>
         <div className={`mt-lg ${wrapperIssues}`}>
             <IssuesHeader />
+
             <IssuesWrapper>
                 {
-                    issuesState.loading === `success` ? issuesState.issuesList.map((issue, index) => {
+                    issuesState.issuesList.map((issue, index) => {
 
                         if (index === issuesState.issuesList.length - 1) {
-                            if (pageNumber < TOTAL_PAGES) {
+                            if (pageNumber <= TOTAL_PAGES) {
                                 return <div
                                     ref={setLastElement}
-                                ><button
-                                    onClick={() => {
-                                        setPageNumber(prevState => prevState + 1)
-                                    }}
-                                >Load More</button></div>
+                                ><Issue key={issue.id} issue={issue}
+                                    />
+                                </div>
                             }
-                            return <>You are all caught up!</>
+                            return <div className="text-center text-larger p-md">You are all caught up!</div>
 
                         }
                         return <Issue key={issue.id} issue={issue}
                         />
 
 
-                    }) : <h1>Loading</h1>
+                    })
                 }
+                {issuesState.loading === `loading` && <div
+                    className="d-flex jc-center p-lg"
+                ><Loader /></div>}
+
             </IssuesWrapper>
         </div>
 
