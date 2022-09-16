@@ -4,6 +4,8 @@ export const ISSUES_API = `https://api.github.com/repos/facebook/react/issues`;
 export const SET_ISSUES_LIST = `SET_ISSUES_LIST`;
 export const SET_LOADING_STATUS = `SET_LOADING_STATUS`;
 export const SET_ERROR_MESSAGE = `SET_ERROR_MESSAGE`;
+export const TOTAL_PAGES = 3;
+export const LIMIT = 10;
 
 type User = {
   login: string;
