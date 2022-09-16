@@ -1,0 +1,49 @@
+.issueLabel {
+    background-color: rgb(212, 197, 249);
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.issueDetailsPopover {
+    position: absolute;
+    bottom: 30px;
+    width: 350px;
+    min-height: 150px;
+    background-color: #FEFEFE;
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    padding: 1rem;
+
+    font-size: 0.9rem;
+}
+
+.issueOwnerDetailsPopover {
+    position: absolute;
+    bottom: 30px;
+    width: 350px;
+    left: 0;
+    min-height: 150px;
+    background-color: #FEFEFE;
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 10px;
+    ;
+    font-size: 0.9rem;
+}
+
+.followButton {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--color-btn-bg);
+}
+
+.IssueBoxWrapper {
+    border-bottom: 1px solid var(--color-border-muted);
+    padding: 0.5rem 1rem;
+}
+
+.IssueBoxWrapper:hover {
+    background-color: var(--color-canvas-subtle);
+}

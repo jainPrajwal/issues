@@ -1,6 +1,7 @@
 .navItemLink {
     color: var(--color-fg-default);
     padding: 0.6rem;
+    align-items: center;
 }
 
 .navItemLink:hover {
@@ -10,11 +11,11 @@
     cursor: pointer;
 
 }
+.navItem {
+    border-bottom: 1px solid transparent;
+}
 
 .borderBottomActive {
     border-bottom: 1px solid var(--color-primer-border-active);
 }
 
-.navItem {
-    
-}

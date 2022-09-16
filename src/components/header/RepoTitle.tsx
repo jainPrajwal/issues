@@ -13,7 +13,7 @@ export function RepoTitle() {
             <span >
                 <a className="text-large" rel="author" href="/facebook">facebook</a>
             </span>
-            <span className="color-fg-muted mx-sm">/</span>
+            <span className="color-fg-muted mx-sm text-larger">/</span>
             <strong className="">
                 <a href="/facebook/react"
                     className="text-large"

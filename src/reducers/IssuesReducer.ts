@@ -24,7 +24,7 @@ function issuesReducer(state: IssuesInitialState, { type, payload }: ACTION) {
       if (`loadingStatus` in payload) {
         return {
           ...state,
-          loadingStatus: payload.loadingStatus,
+          loading: payload.loadingStatus,
         };
       }
 
