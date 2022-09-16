@@ -17,11 +17,11 @@ function Issue({ issue }: { issue: IssueType }) {
     const [showDetailsPopOver, setShowDetailsPopOver] = useState(false);
 
 
-    const { issueTitleLink, issueLabel, issueDetailsPopover, issueOwnerDetailsPopover, followButton, IssueBoxWrapper } = styles;
+    const { issueTitleLink, issueLabel, issueDetailsPopover, issueOwnerDetailsPopover, followButton, IssueBoxWrapper, issueBody } = styles;
 
 
     return <div className={`d-flex f-direction-col jc-center gap-10 ${IssueBoxWrapper}`}>
-        <div className="d-flex ai-center gap-10 pos-rel">
+        <div className="d-flex ai-center gap-10 pos-rel f-wrap">
 
             <svg
 
@@ -57,9 +57,9 @@ function Issue({ issue }: { issue: IssueType }) {
                         <a href="/"
                             className="styled-normal-link"
 
-                        > <span className="text-bold">Bug:</span> #{issue.number}</a>
+                        > <span className="text-bold">{issue.title}</span></a>
 
-                        <p className="my-md">React 17 not mimic autocomplete up to default browser behaviour. Default Chrome autoc…</p>
+                        <p className={`my-md ${issueBody}`}>{issue.body}</p>
                     </div>
                 </div>
             </span>
@@ -97,7 +97,7 @@ function Issue({ issue }: { issue: IssueType }) {
 
                         href="/"
                         className="styled-normal-link ml-sm"
-                    >bogdanoliinyk
+                    >{issue.user.login}
 
                     </a>
                     <div
@@ -116,7 +116,7 @@ function Issue({ issue }: { issue: IssueType }) {
                             <div
                                 className="wrapper-avatar"
                             >
-                                <img src="https://avatars.githubusercontent.com/u/70579361?v=4" alt="user"
+                                <img src={`${issue.user.avatar_url}`} alt="user"
                                     className="img-rounded"
                                 />
 
@@ -130,8 +130,7 @@ function Issue({ issue }: { issue: IssueType }) {
 
                             <a href="/"
                                 className="styled-normal-link"
-                            >bogdanoliinyk
-                                Bogdan Oliinyk</a>
+                            >{issue.user.login}</a>
 
                         </div>
                     </div>

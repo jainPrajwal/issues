@@ -30,7 +30,6 @@
     padding: 1rem;
     flex-direction: column;
     gap: 10px;
-    ;
     font-size: 0.9rem;
 }
 
@@ -46,4 +45,15 @@
 
 .IssueBoxWrapper:hover {
     background-color: var(--color-canvas-subtle);
+}
+
+.issueBody {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: normal;
 }

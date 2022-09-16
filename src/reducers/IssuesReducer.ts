@@ -9,7 +9,7 @@ function issuesReducer(state: IssuesInitialState, { type, payload }: ACTION) {
         );
 
         const uniqueIssues = new Map(allIssues);
-        console.log(uniqueIssues, `uniqueIssues`)
+
         return {
           ...state,
           issuesList: [...uniqueIssues.values()],
