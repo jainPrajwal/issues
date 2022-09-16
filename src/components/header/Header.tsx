@@ -5,7 +5,7 @@ import { default as styles } from "./Header.module.css";
 
 export function Header() {
     const { header } = styles;
-    return <div className={`pt-lg px-md ${header}`}>
+    return <div className={`pt-lg px-lg ${header}`}>
         <Summary />
         <NavigationBar />
 

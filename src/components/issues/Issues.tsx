@@ -24,12 +24,15 @@ function Issues() {
                         if (index === issuesState.issuesList.length - 1) {
                             if (pageNumber <= TOTAL_PAGES) {
                                 return <div
+                                    key={issue.id}
                                     ref={setLastElement}
                                 ><Issue key={issue.id} issue={issue}
                                     />
                                 </div>
                             }
-                            return <div className="text-center text-larger p-md">You are all caught up!</div>
+                            return <div
+                                key={issue.id}
+                                className="text-center text-larger p-md">You are all caught up!</div>
 
                         }
                         return <Issue key={issue.id} issue={issue}

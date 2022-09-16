@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ISSUES_API, LIMIT, TOTAL_PAGES } from "../constants/issues.types";
 import { useIssues } from "./useIssues";
 
-function useInfiniteScroll()  {
+function useInfiniteScroll() {
     const [pageNumber, setPageNumber] = useState(1);
     const [lastElement, setLastElement] = useState<HTMLDivElement | null>(null);
     const { issuesState, issuesDispatch } = useIssues();
@@ -17,7 +17,7 @@ function useInfiniteScroll()  {
      */
     const observer = useRef(new IntersectionObserver((entries) => {
         const first = entries[0];
-        console.log(`first element `, first);
+
 
         if (first.isIntersecting) {
             setPageNumber(prevState => prevState + 1)
@@ -103,8 +103,8 @@ function useInfiniteScroll()  {
     }, [lastElement]);
 
 
-    return {startIndex, endIndex, pageNumber, lastElement, setLastElement}
+    return { startIndex, endIndex, pageNumber, lastElement, setLastElement }
 
 }
 
-export {useInfiniteScroll}
+export { useInfiniteScroll }

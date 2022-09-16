@@ -1,12 +1,18 @@
-import { ACTION, IssuesInitialState } from "../constants/issues.types";
+import { ACTION, Issue, IssuesInitialState } from "../constants/issues.types";
 
 function issuesReducer(state: IssuesInitialState, { type, payload }: ACTION) {
   switch (type) {
     case `SET_ISSUES_LIST`:
       if (`issues` in payload) {
+        const allIssues = [...state.issuesList, ...payload.issues].map(
+          (issue) => [issue.id, issue] as [number, Issue]
+        );
+
+        const uniqueIssues = new Map(allIssues);
+        console.log(uniqueIssues, `uniqueIssues`)
         return {
           ...state,
-          issuesList: payload.issues,
+          issuesList: [...uniqueIssues.values()],
         };
       }
       return state;

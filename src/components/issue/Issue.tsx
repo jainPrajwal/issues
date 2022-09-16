@@ -77,7 +77,7 @@ function Issue({ issue }: { issue: IssueType }) {
         </div>
         <div
         >
-            <p className="text-small ">#{issue.number} opened
+            <div className="text-small ">#{issue.number} opened
                 <span> {new Date(issue.created_at).getHours()} </span>
                 hours ago by
                 <span
@@ -136,7 +136,7 @@ function Issue({ issue }: { issue: IssueType }) {
                         </div>
                     </div>
                 </span>
-            </p>
+            </div>
 
         </div>
     </div>
