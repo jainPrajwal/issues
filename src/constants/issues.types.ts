@@ -1,6 +1,9 @@
 import React from "react";
 
 export const ISSUES_API = `https://api.github.com/repos/facebook/react/issues`;
+export const SET_ISSUES_LIST = `SET_ISSUES_LIST`;
+export const SET_LOADING_STATUS = `SET_LOADING_STATUS`;
+export const SET_ERROR_MESSAGE = `SET_ERROR_MESSAGE`;
 
 type User = {
   login: string;
@@ -80,4 +83,39 @@ type Issue = {
 type LoadingStatus = `idle` | `loading` | `success` | `error`;
 type ChildrenProps = React.ReactNode;
 
-export type { Issue, Label, Reactions, User, LoadingStatus, ChildrenProps };
+type IssuesInitialState = {
+  issuesList: Array<Issue>;
+  loading: LoadingStatus;
+  errorMessage?: string;
+};
+
+type ACTION =
+  | {
+      type: typeof SET_ISSUES_LIST;
+      payload: {
+        issues: Array<Issue>;
+      };
+    }
+  | {
+      type: typeof SET_LOADING_STATUS;
+      payload: {
+        loadingStatus: LoadingStatus;
+      };
+    }
+  | {
+      type: typeof SET_ERROR_MESSAGE;
+      payload: {
+        errorMessage: string;
+      };
+    };
+
+export type {
+  Issue,
+  Label,
+  Reactions,
+  User,
+  LoadingStatus,
+  ChildrenProps,
+  IssuesInitialState,
+  ACTION,
+};
